@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+
+
+/* globals */
+
+:root {
+    --dark-blue: hsl(233, 26%, 24%);
+    --lime-green: hsl(136, 65%, 51%);
+    --bright-cyan: hsl(192, 70%, 51%);
+    --grayish-blue: hsl(233, 8%, 62%);
+    --light-grayish-blue: hsl(220, 16%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+/* css reset */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: var(--grayish-blue);
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Public Sans', sans-serif;
+}
+body{
+    font-size: 1.8rem;
+}
+
+/* --------- header section ----------*/
+
+header {
+    height: 6rem;
+    /* border: 1px solid red; */
+    /* max-width: 17rem; */
+    
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+}
+
+@media (min-width: 575px) {
+    header {
+        height: 8rem;
+    }
+    /* beacause of header, the body has overflow-hidden */
+    body{
+        overflow: auto !important;
+    }
+}
+@media (min-width: 1440px) {
+    header {
+        /* height: 8rem; */
+        margin: 0 17rem ;
+    }
+}
+
+
+.logo{
+    width: 14.5rem;
+    height: 2.2rem  ;
+}
+.menu {
+    position: relative;
+}
+
+.menu span {
+    
+    display: block;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 0.2rem;
+    background-color: var(--dark-blue);
+    transition: all 300ms ease-in-out;
+    /* transform-origin: left; */
+    position: relative;
+}
+
+.menu span:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+/* menu animation */
+
+
+.cross span:first-child{
+    transform: rotate(45deg);
+    margin-bottom: 0px;
+    top:4px;
+    
+} 
+.cross span:nth-child(2){
+    opacity: 0;
+    margin-bottom: 0px;
+} 
+.cross span:last-child{
+    transform: rotate(-45deg);
+    
+   
+} 
+
+
+
+@media (min-width: 575px) {
+    .menu {
+        display: none;
+    }
+}
+
+nav{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a{
+    font-size: 1.4rem;
+    transition: all 300ms ease-in-out;
+    position: relative;
+    /* padding: 0.5rem; */
+    
+}
+nav a:hover{
+    color: var(--dark-blue);
+}
+nav a:not(:last-child){
+    margin-right: 3.1rem;
+    
+} 
+
+nav a::after{
+    content: "";
+    left: 0;
+    top: 3.3rem;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0.4rem;
+    background: linear-gradient(to right,var(--lime-green) ,var(--bright-cyan));
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
+nav a:hover::after{
+    opacity: 1;
+    
+    
+}
+
+@media (max-width: 575px) {
+    nav {
+        display: none;
+    }
+}
+/* -------- button design -------- */
+.btn{
+    padding: 1.6rem 3.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: linear-gradient(to right,var(--lime-green) ,var(--bright-cyan));
+    border-radius: 50px;
+    color: var(--white);    
+
+}
+/* ------------------------------------- */
+
+@media (max-width: 575px) {
+    .nav-btn{
+        display: none;
+    }
+}
+
+
+
+/* .overlay part */
+
+
+.overlay{
+    position:fixed ;
+    height: 100vh;
+    width: 100vw;
+    /* overflow: hidden; */
+    visibility: hidden;
+    opacity: 0;
+    background: linear-gradient(var(--dark-blue),transparent);
+    transition: all 300ms ease-in-out;
+}
+
+.opa-show{
+    opacity: 1 !important;
+    /* display: block !important; */
+    visibility: visible !important; 
+}
+@media (min-width: 575px) {
+    .overlay{
+        display: none;
+    }
+}
+
+/* for only body scroll lock */
+.overflow-hidden{
+    overflow: hidden;
+}
+
+/* mobile-nav style */
+.mobile-nav{
+    z-index: 11;
+    position: fixed;
+    padding: 3.4rem 0;
+    margin: 2.4rem;
+
+    /* display: none; */
+    visibility: hidden;
+    border-radius: 5px;
+    background-color: var(--white);
+    width: calc(100% - (2.4rem + 2.4rem));  
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+
+}
+.mobile-nav a{
+    color: var(--dark-blue);
+    display: block;
+    text-align: center;
+}
+.mobile-nav a:not(:last-child){
+    margin-bottom: 2.8rem;
+}
+
+@media (min-width: 575px) {
+    .mobile-nav{
+        display: none;
+    }
+}
+
+/* -------------------------------------- */
