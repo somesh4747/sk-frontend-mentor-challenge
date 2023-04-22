@@ -12,6 +12,20 @@
     --white: hsl(0, 0%, 100%);
 }
 
+h2 {
+    font-size: 2.6rem;
+    font-weight: 400;
+}
+h3 {
+    /* font-size: 2.6rem; */
+    font-weight: 300;
+}
+
+p {
+    color: var(--grayish-blue);
+    font-size: 1.4rem;
+}
+
 /* css reset */
 
 *,
@@ -41,12 +55,18 @@ header {
     height: 6rem;
     /* border: 1px solid red; */
     /* max-width: 17rem; */
-
+    position: sticky;
+    top: 0;
     padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--white);
+    z-index: 100;
+
+    -webkit-box-shadow: 1px 9px 27px -9px rgba(0, 0, 0, 0.44);
+    -moz-box-shadow: 1px 9px 27px -9px rgba(0, 0, 0, 0.44);
+    box-shadow: 1px 9px 27px -9px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 575px) {
@@ -61,7 +81,7 @@ header {
 @media (min-width: 1440px) {
     header {
         /* height: 8rem; */
-        margin: 0 17rem;
+        padding: 0 17rem;
     }
 }
 
@@ -206,7 +226,6 @@ nav a:hover::after {
     overflow: hidden;
 }
 
-
 /* mobile-nav style */
 .mobile-nav {
     z-index: 21;
@@ -245,6 +264,7 @@ nav a:hover::after {
     position: relative;
     display: flex;
     flex-direction: column;
+    margin-bottom: 2rem;
 }
 
 .hero-text {
@@ -286,9 +306,7 @@ nav a:hover::after {
     background-size: cover;
 }
 
-
 /* hero section media query */
-
 
 @media (min-device-width: 900px) and (max-device-width: 1440px) {
     .hero {
@@ -356,3 +374,93 @@ nav a:hover::after {
 }
 
 /* -------------------------------------------- */
+
+/* fetures section styles */
+
+.features {
+    text-align: center;
+    padding: 7rem 0;
+    background-color: var(--light-grayish-blue);
+}
+.feature-heading {
+    padding: 0 3.4rem;
+}
+.feature-heading h2 {
+    margin-bottom: 2.4rem;
+}
+.feature-heading p {
+    margin-bottom: 5.5rem;
+    padding: 0 1.4rem;
+}
+.feature-flex {
+    /* padding: 0 3.4rem;    */
+}
+
+.feature-element {
+    padding: 0 3.4rem;
+}
+.feature-element:not(:last-child) {
+    margin-bottom: 2.4rem;
+}
+.feature-element *:not(:last-child) {
+    margin-bottom: 1.8rem;
+}
+
+@media (min-width: 975px) {
+    .features {
+        text-align: left;
+    }
+    .feature-flex {
+        display: flex;
+        flex-basis: 1;
+        flex-grow: 1;
+        padding: 0 3.4rem;
+    }
+    .feature-heading h2 {
+        font-size: 3.2rem;
+    }
+    .feature-heading p {
+        padding: 0;
+        max-width: 50rem;
+    }
+    .feature-element h3 {
+        font-size: 2.4rem;
+    }
+    .feature-element {
+        padding: 1.5rem;
+        flex-basis: 1;
+        flex-grow: 1;
+    }
+}
+
+@media (min-width: 1440px) {
+    .features {
+        padding: 11.5rem 17rem;
+    }
+    .feature-heading {
+        padding: 0;
+    }
+    .feature-flex {
+        display: flex;
+        padding: 0;
+    }
+    .feature-element {
+        flex-basis: 100%;
+        flex-grow: 1;
+        padding: 0;
+    }
+    .feature-element:not(:last-child) {
+        margin-right: 1.5rem;
+    }
+}
+@media (min-device-width: 675px) and (max-device-width: 975px) {
+    .feature-flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+    .feature-element {
+        flex: 0 0 50%;
+    }
+}
